@@ -311,9 +311,9 @@
     c.set(c1, 0);
     //c.set(a, 2);
     //c.set(c2, 2 + a.length);
-    c.set(c2, 2);
     
-    var msg = c;
+    //var msg = c;
+    var msg = new Uint8Array([START_SYSEX, STRING_DATA, END_SYSEX]);
     
     device.send(msg.buffer);  
   }
