@@ -367,7 +367,7 @@
   
   ext.test = function(s) {
     test(s);
-  }
+  };
 
   ext.analogRead = function(pin) {
     return analogRead(pin);
