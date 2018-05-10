@@ -296,15 +296,15 @@
     return (digitalInputData[pin >> 3] >> (pin & 0x07)) & 0x01;
   }
   
-  function test(s) {
+  function test222(s) {
     console.log('TEST ' + device.id);
     var msg = new Uint8Array([
         START_SYSEX, STRING_DATA, END_SYSEX]);
     device.send(msg.buffer);  
   }
   
-  function test222(s) {
-    /*
+  function test(s) {
+    console.log('TEST ' + device.id);
     var a = new Uint8Array(s.length);
     
     for (var i=0, strLen=str.length; i < strLen; i++) {
@@ -316,13 +316,12 @@
 
     var c = new Uint8Array(a.length + 3);
     c.set(c1, 0);
-    c.set(a, 2);
-    c.set(c2, 2 + a.length);
+    c.set(a, c1.length);
+    c.set(c2, c1.length + a.length);
     
-    var msg = c;
+    var msg = new Uint8Array(c);
     
-    */
-    var msg = new Uint8Array([START_SYSEX, STRING_DATA, END_SYSEX]);
+    //var msg = new Uint8Array([START_SYSEX, STRING_DATA, END_SYSEX]);
     
     device.send(msg.buffer);  
   }
