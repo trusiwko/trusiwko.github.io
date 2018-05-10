@@ -364,6 +364,10 @@
     else if (val == menus[lang]['outputs'][1])
       digitalWrite(pin, LOW);
   };
+  
+  ext.test = function(s) {
+    test(s);
+  }
 
   ext.analogRead = function(pin) {
     return analogRead(pin);
