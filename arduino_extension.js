@@ -306,7 +306,7 @@
   function LCDprint(s) {
     console.log('LCDprint ' + device.id);
     
-    s = '1 ' + s;
+    s = '1' + s;
     
     var a = new Uint8Array(s.length*2);
     
