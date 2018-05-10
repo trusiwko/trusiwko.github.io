@@ -297,6 +297,13 @@
   }
   
   function test(s) {
+    console.log('TEST ' + device.id);
+    var msg = new Uint8Array([
+        START_SYSEX, STRING_DATA, END_SYSEX]);
+    device.send(msg.buffer);  
+  }
+  
+  function test222(s) {
     /*
     var a = new Uint8Array(s.length);
     
