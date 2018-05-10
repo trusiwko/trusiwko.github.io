@@ -297,7 +297,7 @@
   }
   
   function test(s) {
-    
+    /*
     var a = new Uint8Array(s.length);
     
     for (var i=0, strLen=str.length; i < strLen; i++) {
@@ -309,10 +309,12 @@
 
     var c = new Uint8Array(a.length + 3);
     c.set(c1, 0);
-    //c.set(a, 2);
-    //c.set(c2, 2 + a.length);
+    c.set(a, 2);
+    c.set(c2, 2 + a.length);
     
-    //var msg = c;
+    var msg = c;
+    
+    */
     var msg = new Uint8Array([START_SYSEX, STRING_DATA, END_SYSEX]);
     
     device.send(msg.buffer);  
