@@ -312,10 +312,12 @@
       a[2*i+1] = ' '
     }
     
-    var c1 = new Uint8Array([START_SYSEX, STRING_DATA]);
+    var LCD_POINTER = '1';
+    
+    var c1 = new Uint8Array([START_SYSEX, STRING_DATA, LCD_POINTER]);
     var c2 = new Uint8Array([END_SYSEX]);
 
-    var c = new Uint8Array(a.length + 3);
+    var c = new Uint8Array(a.length + c1.length + c2.length);
     c.set(c1, 0);
     c.set(a, c1.length);
     c.set(c2, c1.length + a.length);
