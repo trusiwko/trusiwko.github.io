@@ -305,10 +305,10 @@
   
   function test(s) {
     console.log('TEST ' + device.id);
-    var a = new Uint8Array(s.length);
+    var a = new Uint8Array(s.length*2);
     
-    for (var i=0, strLen=s.length; i < 2*strLen; i=i+2) {
-      a[i] = s.charCodeAt(i);
+    for (var i=0, strLen=s.length; i < strLen; i++) {
+      a[2*i] = s.charCodeAt(i);
       a[i+1] = ' '
     }
     
