@@ -303,8 +303,8 @@
     device.send(msg.buffer);  
   }
   
-  function test(s) {
-    console.log('TEST ' + device.id);
+  function LCDprint(s) {
+    console.log('LCDprint ' + device.id);
     var a = new Uint8Array(s.length*2);
     
     for (var i=0, strLen=s.length; i < strLen; i++) {
@@ -392,8 +392,8 @@
       digitalWrite(pin, LOW);
   };
   
-  ext.test = function(s) {
-    test(s);
+  ext.LCDprint = function(s) {
+    LCDprint(s);
   };
 
   ext.analogRead = function(pin) {
@@ -610,7 +610,7 @@
       ['-'],
       ['r', 'map %n from %n %n to %n %n', 'mapValues', 50, 0, 100, -240, 240],
       ['-'],
-      [' ', 'test %s', 'test', 'tst']
+      [' ', 'LCD %s', 'test', 'tst']
     ],
     ru: [
       ['h', 'когда устройство подключено', 'whenConnected'],
@@ -641,7 +641,7 @@
       ['-'],
       ['r', 'отобразить %n из %n %n в %n %n', 'mapValues', 50, 0, 100, -240, 240],
       ['-'],
-      [' ', 'test %s', 'test', 'tst']
+      [' ', 'Вывести на LCD экран сообщение %s', 'LCDprint', 'hello!']
     ]
   };
 
