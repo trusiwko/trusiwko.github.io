@@ -297,8 +297,18 @@
   }
   
   function test(s) {
-    var msg = new Uint8Array([
-        START_SYSEX, STRING_DATA, END_SYSEX]);
+    
+    var a = Uint8Array.from(s);
+    var c1 = new Uint8Array([START_SYSEX, STRING_DATA]);
+    var c2 = new Uint8Array([END_SYSEX]);
+
+    var c = new Uint8Array(a.length + 3);
+    c.set(c1, 0);
+    c.set(a, 2);
+    c.set(c2, 2 + a.length);
+    
+    var msg = c;
+    
     device.send(msg.buffer);  
   }
 
