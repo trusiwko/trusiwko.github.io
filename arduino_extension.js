@@ -307,7 +307,7 @@
     console.log('TEST ' + device.id);
     var a = new Uint8Array(s.length);
     
-    for (var i=0, strLen=str.length; i < strLen; i++) {
+    for (var i=0, strLen=s.length; i < strLen; i++) {
       a[i] = s.charCodeAt(i);
     }
     
