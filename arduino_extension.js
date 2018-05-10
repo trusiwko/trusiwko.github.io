@@ -305,6 +305,9 @@
   
   function LCDprint(s) {
     console.log('LCDprint ' + device.id);
+    
+    s = '1 ' + s;
+    
     var a = new Uint8Array(s.length*2);
     
     for (var i=0, strLen=s.length; i < strLen; i++) {
@@ -312,9 +315,7 @@
       a[2*i+1] = ' '
     }
     
-    var LCD_POINTER = '1';
-    
-    var c1 = new Uint8Array([START_SYSEX, STRING_DATA, LCD_POINTER]);
+    var c1 = new Uint8Array([START_SYSEX, STRING_DATA]);
     var c2 = new Uint8Array([END_SYSEX]);
 
     var c = new Uint8Array(a.length + c1.length + c2.length);
