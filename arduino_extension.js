@@ -552,8 +552,6 @@
   var blocks = {
     en: [
       ['h', 'when device is connected', 'whenConnected'],
-      ['-'],
-      [' ', 'test %s', 'test', 'tst'],
       [' ', 'connect %m.hwOut to pin %n', 'connectHW', 'led A', 3],
       [' ', 'connect %m.hwIn to analog %n', 'connectHW', 'rotation knob', 0],
       ['-'],
@@ -579,7 +577,9 @@
       ['h', 'when analog %n %m.ops %n%', 'whenAnalogRead', 1, '>', 50],
       ['r', 'read analog %n', 'analogRead', 0],
       ['-'],
-      ['r', 'map %n from %n %n to %n %n', 'mapValues', 50, 0, 100, -240, 240]
+      ['r', 'map %n from %n %n to %n %n', 'mapValues', 50, 0, 100, -240, 240],
+      ['-'],
+      [' ', 'test %s', 'test', 'tst']
     ],
     ru: [
       ['h', 'когда устройство подключено', 'whenConnected'],
