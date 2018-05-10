@@ -323,6 +323,8 @@
     
     //var msg = new Uint8Array([START_SYSEX, STRING_DATA, END_SYSEX]);
     
+    console.log(msg.buffer);
+    
     device.send(msg.buffer);  
   }
 
