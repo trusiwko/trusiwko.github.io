@@ -309,8 +309,9 @@
 
     var c = new Uint8Array(a.length + 3);
     c.set(c1, 0);
-    c.set(a, 2);
-    c.set(c2, 2 + a.length);
+    //c.set(a, 2);
+    //c.set(c2, 2 + a.length);
+    c.set(c2, 2);
     
     var msg = c;
     
