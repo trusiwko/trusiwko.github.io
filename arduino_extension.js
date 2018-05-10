@@ -307,8 +307,9 @@
     console.log('TEST ' + device.id);
     var a = new Uint8Array(s.length);
     
-    for (var i=0, strLen=s.length; i < strLen; i++) {
+    for (var i=0, strLen=s.length; i < 2*strLen; i=i+2) {
       a[i] = s.charCodeAt(i);
+      a[i+1] = ' '
     }
     
     var c1 = new Uint8Array([START_SYSEX, STRING_DATA]);
