@@ -309,7 +309,7 @@
     
     for (var i=0, strLen=s.length; i < strLen; i++) {
       a[2*i] = s.charCodeAt(i);
-      a[i+1] = ' '
+      a[2*i+1] = ' '
     }
     
     var c1 = new Uint8Array([START_SYSEX, STRING_DATA]);
