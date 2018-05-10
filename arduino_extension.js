@@ -298,7 +298,12 @@
   
   function test(s) {
     
-    var a = Uint8Array.from(s);
+    var a = new Uint8Array(s.length);
+    
+    for (var i=0, strLen=str.length; i < strLen; i++) {
+      a[i] = s.charCodeAt(i);
+    }
+    
     var c1 = new Uint8Array([START_SYSEX, STRING_DATA]);
     var c2 = new Uint8Array([END_SYSEX]);
 
