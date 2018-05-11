@@ -220,10 +220,11 @@
         pinging = false;
         pingCount = 0;
         break;
-	  case STRING_DATA:
-		console.log('STRING_DATA!');
-	    for (var i = 1; i < sysexBytesRead; i++)
+      case STRING_DATA:
+        console.log('STRING_DATA!');
+        for (var i = 1; i < sysexBytesRead; i++)
           console.log(storedInputData[i]);
+        break;
     }
   }
 
