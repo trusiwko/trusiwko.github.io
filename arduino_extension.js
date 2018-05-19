@@ -568,7 +568,7 @@
       device.close();
       device = null;
       tryNextDevice();
-    }, 8000);
+    }, 10000);
   }
 
   ext._shutdown = function() {
